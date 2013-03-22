@@ -30,9 +30,7 @@ BuildRequires:  perl(Pod::Coverage)
 BuildRequires:  perl(Test::Pod)
 BuildRequires:  perl-macros
 Requires:       perl(Pod::Coverage)
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 BuildArch:      noarch
-%{perl_requires}
 
 %description
 Test::Pod::Coverage Perl module
@@ -58,6 +56,5 @@ rm -rf %{buildroot}%perl_archlib
 
 %files -f %{name}.files
 %defattr(-,root,root,-)
-%doc Changes
 
 %changelog
