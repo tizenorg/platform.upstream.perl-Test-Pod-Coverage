@@ -25,6 +25,7 @@ Summary:        Test::Pod::Coverage Perl module
 Url:            http://search.cpan.org/dist/Test-Pod-Coverage/
 Group:          Development/Libraries/Perl
 Source:         http://www.cpan.org/authors/id/P/PE/PETDANCE/Test-Pod-Coverage-%{version}.tar.gz
+Source1001: 	perl-Test-Pod-Coverage.manifest
 BuildRequires:  perl
 BuildRequires:  perl(Pod::Coverage)
 BuildRequires:  perl(Test::Pod)
@@ -37,6 +38,7 @@ Test::Pod::Coverage Perl module
 
 %prep
 %setup -q -n %{cpan_name}-%{version}
+cp %{SOURCE1001} .
 
 %build
 perl Makefile.PL INSTALLDIRS=vendor
@@ -55,6 +57,7 @@ rm -rf %{buildroot}%perl_archlib
 %perl_gen_filelist
 
 %files -f %{name}.files
+%manifest %{name}.manifest
 %defattr(-,root,root,-)
 
 %changelog
